@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
   lightbox.className = 'lightbox';
   lightbox.setAttribute('role', 'dialog');
   lightbox.setAttribute('aria-label', 'Enlarged image');
-  lightbox.innerHTML = '<img alt="">';
+  lightbox.innerHTML = '<button class="lightbox-close" aria-label="Close enlarged image" type="button">&times;</button><img alt="">';
   document.body.appendChild(lightbox);
 
   const lightboxImg = lightbox.querySelector('img');

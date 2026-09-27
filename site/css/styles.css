@@ -145,6 +145,10 @@ em { font-style: italic; }
   padding-bottom: 18px;
 }
 
+/* header + footer span the full viewport; only content sections keep the reading column */
+.site-header .wrap,
+.site-footer .wrap { max-width: none; }
+
 .wordmark {
   font-family: var(--serif);
   font-size: 30px;
@@ -182,7 +186,8 @@ em { font-style: italic; }
   background: none;
   border: 0;
   cursor: pointer;
-  padding: 8px;
+  padding: 12px;
+  margin-right: -12px;
 }
 
 .nav-toggle span {
@@ -520,6 +525,24 @@ em { font-style: italic; }
 
 .lightbox.open { display: flex; }
 
+.lightbox-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  z-index: 1;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 34px;
+  line-height: 1;
+  color: var(--paper);
+  opacity: .85;
+  transition: opacity .2s;
+}
+
+.lightbox-close:hover { opacity: 1; }
+
 .lightbox img {
   max-width: 94vw;
   max-height: 92vh;
@@ -598,6 +621,23 @@ em { font-style: italic; }
 }
 
 .signup input:focus { outline: none; border-bottom-color: var(--clay); }
+
+/* ---------- accessibility & polish ---------- */
+
+/* anchored sections must not hide beneath the sticky header */
+[id] { scroll-margin-top: 88px; }
+
+/* visible keyboard focus everywhere (inputs keep their underline affordance) */
+:focus-visible { outline: 2px solid var(--clay-deep); outline-offset: 3px; }
+.field input:focus-visible,
+.field select:focus-visible,
+.signup input:focus-visible { outline: none; }
+
+/* respect users who opt out of motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
 
 .form-thanks { display: none; }
 
@@ -888,6 +928,11 @@ em { font-style: italic; }
   body.nav-open .nav-toggle span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
   body.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
   body.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  /* comfortable touch targets in the mobile menu */
+  .main-nav a { padding: 12px 0; }
+  .main-nav a.btn--pine { padding: 14px 26px; }
+  .filter-row button { padding: 8px 0 6px; }
 
   .signup form { flex-direction: column; }
   .signup .btn { width: 100%; }
