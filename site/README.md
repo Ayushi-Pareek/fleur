@@ -7,7 +7,7 @@ A browsable design prototype of the full Fleur site. Open `index.html` in any br
 | File | Purpose |
 |---|---|
 | `index.html` | Homepage — art sections + two-door "Learn" panel (no maker prices) |
-| `shop.html` | Available works — **art only** (sculptures → statement piece), Sold and Coming-February states, single doorway line to the Method |
+| `shop.html` | Available works — **art only** (sculptures → statement piece), Sold out and Coming-February states, single doorway line to the Method |
 | `product.html` | Product detail template — spec list, care, shipping, "add" wiring point |
 | `method.html` | **The Fleur Method** — premium teaching tier: recorded classes ($145), in-person workshops (letter CTA), Rose Stem Kit ($42); closing band redirects to Print & Make by time framing |
 | `printables.html` | **Print & Make** — the artist's experiments: one unified shelf (flowers, plants, cards, journals) with a category filter (Everything / Flowers & Plants / Cards & Journals), shared "what you'll need" strip (A4 paper ~100 gsm), CTA band up to the Method |
@@ -63,4 +63,5 @@ Look at it at phone width too (resize the browser) — the nav collapses, grids 
 - The collection is named **"The Collection"** — no series name in headings; individual works keep their own names (Rose No. 1, etc.). Future series slot in without re-titling pages.
 - Prices are placeholders in USD per your call; adjust in the HTML. They display in the visitor's currency via `js/currency.js`.
 - The wordmark is type-only ("FLEUR.") — a drawn logo can replace it later without layout changes.
+- **Editions policy (important, do not regress):** the site never says "one of one." Each piece is **one of a kind** — handmade, no two identical, signed and dated — but multiple units of the same plant may exist and are released in small batches. Flags read **"Sold out"** (not "Sold"), and copy says the studio makes more in its own time once a batch is gone. Pieces ship **worldwide**, tracked (India also offers white-glove delivery and placement); never frame shipping as India-only.
 - Contact email and Instagram links are placeholders (`hello@fleur.studio`).

@@ -34,10 +34,10 @@ No water, no wilting, no weekly replacements. With basic care, a paper sculpture
 Roses in February. Hellebores in August. If a flower belongs in your room, it doesn't have to be in season.
 
 ### One of a kind
-Every leaf is cut and shaped by hand from the studio's own studies of the plant, so no two pieces are identical. Each one is signed and dated by the artist.
+Every leaf is cut and shaped by hand from the studio's own studies of the plant, so no two pieces are identical. Each one is signed and dated by the artist. Pieces are released in small batches; when a batch sells out, the studio makes more in its own time. (Never "one of one" — the site does not claim pieces are single editions.)
 
 ### The easier bouquet
-Nothing to order, trim, or throw away at the end of the week. Fresh arrangements are a repeat purchase. This is a single one.
+Nothing to order, trim, or throw away at the end of the week. Fresh arrangements are a repeat purchase — a paper sculpture simply stays.
 
 ---
 
@@ -149,7 +149,7 @@ If Ayushi later wants the city on the homepage, the placement that reads best is
 
 - **Name works species-first, like botanical plates.** "Rose No. 3," "Hellebore, Dark Stem." The plant is the subject; colour and edition are qualifiers. Never "Pink Rose Art Piece."
 - **Tiered architecture — collect / learn / make.** The site runs three clearly separated tiers:
-  1. **Art (collect).** Sculptures and commissions. Scarcity language, "one of one," "add to collection." The only tier shown in the shop.
+  1. **Art (collect).** Sculptures and commissions. One-of-a-kind language — handmade, no two identical, signed and dated — **never "one of one"**: multiple units of a plant may exist, released in small batches that sell out and are made again. Flags read "Sold out." "Add to collection" CTA. Shipping is worldwide, tracked. The only tier shown in the shop.
   2. **The Fleur Method (learn).** Premium teaching of the *real* technique — recorded classes, in-person workshops, the stem kit. Framed as authority, never as the accessible alternative. Never talks down to the craft tier.
   3. **Print & Make (make).** "Make something this afternoon" — the artist's wind-down practice and experiments shelf. Own label, own tone, openly credited to the studio.
 - **Price proximity rule.** No maker price (templates/classes/kits) ever appears on the homepage, the shop, or any art page — maker prices live only on `method.html` and `printables.html`. The shop carries a single doorway line ("Learn the Technique").
