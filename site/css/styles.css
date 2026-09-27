@@ -228,6 +228,77 @@ em { font-style: italic; }
 .btn--ghost-paper { border-color: var(--paper-dim); color: var(--paper); background: transparent; }
 .btn--ghost-paper:hover { background: var(--paper); color: var(--ink); }
 
+/* ---------- curtain CTA — full-width bar, fill slides up on hover ---------- */
+
+.btn-line {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  max-width: 560px;
+  padding: 22px 4px;
+  border-top: 1px solid var(--ink);
+  text-decoration: none;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--ink);
+  overflow: hidden;
+  transition: color .35s ease;
+}
+
+.btn-line::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--ink);
+  transform: translateY(101%);
+  transition: transform .35s ease;
+}
+
+.btn-line:hover::before,
+.btn-line:focus-visible::before { transform: translateY(0); }
+
+.btn-line:hover,
+.btn-line:focus-visible { color: var(--paper); }
+
+.btn-line .btn-line-label { position: relative; z-index: 1; transition: transform .35s ease; }
+
+.btn-line:hover .btn-line-label { transform: translateX(8px); }
+
+.btn-line .btn-line-arrow {
+  position: relative;
+  z-index: 1;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(64, 64, 56, .1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .35s ease, transform .35s ease;
+}
+
+.btn-line:hover .btn-line-arrow { background: rgba(240, 240, 224, .18); transform: translateX(4px); }
+
+.btn-line svg { width: 17px; height: 17px; }
+
+/* variant for the dark ground */
+.btn-line--paper { border-top-color: var(--paper-dim); color: var(--paper); }
+.btn-line--paper::before { background: var(--paper); }
+.btn-line--paper:hover, .btn-line--paper:focus-visible { color: var(--ink); }
+.btn-line--paper .btn-line-arrow { background: rgba(240, 240, 224, .16); }
+.btn-line--paper:hover .btn-line-arrow { background: rgba(64, 64, 56, .12); }
+
+/* span the full content column (e.g. below a card grid) */
+.btn-line--full { max-width: none; }
+
 /* ---------- placeholder art blocks ---------- */
 
 .ph {
@@ -256,9 +327,9 @@ em { font-style: italic; }
 
 /* ---------- sections ---------- */
 
-.section { padding: clamp(72px, 11vw, 130px) 0; }
+.section { padding: clamp(84px, 12vw, 168px) 0; }
 
-.section--tight { padding: clamp(52px, 8vw, 90px) 0; }
+.section--tight { padding: clamp(60px, 9vw, 116px) 0; }
 
 .section--stone { background: var(--stone); }
 
@@ -284,6 +355,52 @@ em { font-style: italic; }
 }
 
 .split--uneven { grid-template-columns: 1.1fr .9fr; }
+
+/* ---------- giant background marquee (the HoH signature, Fleur accent) ---------- */
+
+.section--collection {
+  position: relative;
+  overflow: hidden;
+}
+
+.section--collection > .wrap { position: relative; z-index: 1; }
+
+.marquee-bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: clamp(10px, 2.4vw, 30px);
+  z-index: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.marquee-bg-track {
+  display: inline-flex;
+  width: max-content;
+  animation: marquee-slide 30s linear infinite;
+}
+
+.marquee-bg-track span {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(88px, 15vw, 200px);
+  line-height: 1;
+  padding-right: .6em;
+  color: rgba(192, 120, 80, .16);
+  -webkit-text-stroke: 1px rgba(143, 75, 38, .28);
+}
+
+@supports not (-webkit-text-stroke: 1px black) {
+  .marquee-bg-track span { color: rgba(192, 120, 80, .2); }
+}
+
+@keyframes marquee-slide {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
 
 /* hero — full-bleed media (image now, video later), headline in the lower half */
 
@@ -398,6 +515,17 @@ em { font-style: italic; }
 .card .ph { aspect-ratio: 4 / 5; transition: transform .4s ease; }
 
 .card:hover .ph { transform: translateY(-6px); }
+
+/* slow image settle on hover — the editorial card standard */
+.card .ph img,
+.journal-card .ph img,
+.journal-row-media img { transition: transform .6s ease; }
+
+.card:hover .ph img,
+.journal-card:hover .ph img,
+.journal-row:hover .journal-row-media img { transform: scale(1.03); }
+
+.card:hover .card-body h3 { color: var(--clay-deep); }
 
 .card-body {
   display: flex;
@@ -662,6 +790,21 @@ em { font-style: italic; }
   padding: clamp(48px, 7vw, 80px) 0 40px;
 }
 
+/* ghost wordmark — the page ends on the name, the way it began */
+.foot-mark {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(76px, 13vw, 190px);
+  line-height: .95;
+  letter-spacing: .02em;
+  color: rgba(64, 64, 56, .1);
+  user-select: none;
+  margin-bottom: clamp(30px, 5vw, 64px);
+}
+
+.foot-mark span { color: rgba(143, 75, 38, .3); }
+
 .footer-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
@@ -700,7 +843,7 @@ em { font-style: italic; }
 
 /* ---------- interior page scaffolding ---------- */
 
-.page-head { padding: clamp(56px, 9vw, 110px) 0 clamp(20px, 3vw, 40px); }
+.page-head { padding: clamp(72px, 11vw, 150px) 0 clamp(20px, 3vw, 40px); }
 
 .page-head .lede { margin-top: 22px; }
 
