@@ -19,8 +19,13 @@ A browsable design prototype of the full Fleur site. Open `index.html` in any br
 | `experiment-garden.html` | **The Paper Garden Set** — coming spring, $24 planned: join-letter CTA |
 | `commissions.html` | The dark section, 4-step process, enquiry form |
 | `about.html` | Ayushi's story — Pune named plainly here, per the provenance strategy |
-| `journal.html` | Journal index — six entries across process / inspiration / interiors |
-| `journal-rose.html` | Sample article — shows the reading experience (drop cap, pull quote) |
+| `journal.html` | Journal index — six entries as stacked full-width rows (image + text blocks), pagination placeholder ("Page 1 of 1") |
+| `journal-rose.html` | Article — Why the Rose Is Harder Than It Looks |
+| `journal-winter.html` | Article — The Winter Garden, Observed |
+| `journal-rooms.html` | Article — Where Paper Sculpture Belongs in a Room |
+| `journal-colour.html` | Article — Colour Comes Last |
+| `journal-travel.html` | Article — How a Rose Travels |
+| `journal-firstyear.html` | Article — Living With a Piece: The First Year |
 
 ## Site architecture (tier separation)
 
