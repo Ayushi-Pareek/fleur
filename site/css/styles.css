@@ -444,7 +444,7 @@ em { font-style: italic; }
 .hero-scrim {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(41, 41, 35, .32) 0%, rgba(41, 41, 35, .08) 38%, rgba(28, 28, 23, .68) 100%);
+  background: linear-gradient(180deg, rgba(41, 41, 35, .38) 0%, rgba(41, 41, 35, .14) 40%, rgba(28, 28, 23, .80) 100%);
 }
 
 .hero-content {
@@ -457,6 +457,7 @@ em { font-style: italic; }
   padding-top: 34vh;
   padding-bottom: clamp(56px, 9vh, 112px);
   color: var(--paper);
+  text-shadow: 0 1px 3px rgba(20, 20, 16, .45), 0 8px 32px rgba(20, 20, 16, .35);
 }
 
 .hero-content .eyebrow { color: var(--paper-dim); }
