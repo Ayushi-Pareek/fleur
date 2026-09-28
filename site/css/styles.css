@@ -607,24 +607,19 @@ em { font-style: italic; }
 
 /* learn doors (homepage two-door panel) */
 
-/* the section carries a faint studio cutout on the stone ground —
-   a watermark layer beneath the doors, never over the text */
+/* the section's ground is the studio photograph, upscaled full-bleed —
+   veiled toward stone on the text side for legibility, grained like
+   every other surface */
 .section--learn {
-  position: relative;
-  overflow: hidden;
-}
-
-.section--learn > .wrap { position: relative; z-index: 1; }
-
-.learn-bg-cutout {
-  position: absolute;
-  right: -50px;
-  bottom: -30px;
-  z-index: 0;
-  width: min(46vw, 540px);
-  opacity: .3;
-  transform: rotate(4deg);
-  pointer-events: none;
+  background-color: var(--stone);
+  background-image:
+    linear-gradient(90deg, rgba(192, 184, 152, .84) 0%, rgba(192, 184, 152, .56) 55%, rgba(192, 184, 152, .34) 100%),
+    url("../img/learn-bg.jpg"),
+    url("../img/grain.png");
+  background-size: auto, cover, 256px;
+  background-position: center, center, top left;
+  background-repeat: no-repeat, no-repeat, repeat;
+  background-blend-mode: normal, normal, soft-light;
 }
 
 .learn-doors {
@@ -1133,5 +1128,4 @@ em { font-style: italic; }
   .hero { min-height: 74svh; }
   .hero-content { padding-top: 26vh; gap: 20px; }
   .journal-row { grid-template-columns: 1fr; gap: 20px; align-items: stretch; }
-  .learn-bg-cutout { display: none; }
 }
