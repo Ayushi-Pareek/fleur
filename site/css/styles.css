@@ -50,22 +50,13 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* paper grain over the whole page — a seamless 256px tile, fixed, blended
-   soft-light so 50%-grey stays neutral and the same texture sits identically
-   over every section colour (the microsoft.ai technique, own tile) */
-@supports (mix-blend-mode: soft-light) {
-  body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: 999;
-    pointer-events: none;
-    background-image: url("../img/grain.png");
-    background-repeat: repeat;
-    background-size: 256px;
-    mix-blend-mode: soft-light;
-    opacity: .15;
-  }
+/* paper grain lives IN the surfaces, not on top of the content: each surface
+   carries the 256px tile as a background layer blended soft-light with its own
+   colour. Buttons, images and cards therefore sit crisp on an upper plane. */
+body {
+  background-image: url("../img/grain.png");
+  background-size: 256px;
+  background-blend-mode: soft-light;
 }
 
 ::selection { background: var(--petal); color: var(--ink); }
@@ -334,20 +325,36 @@ em { font-style: italic; }
 
 /* ---------- sections ---------- */
 
-.section { padding: clamp(84px, 12vw, 168px) 0; }
+.section {
+  padding: clamp(84px, 12vw, 168px) 0;
+  background-color: var(--paper);
+  background-image: url("../img/grain.png");
+  background-size: 256px;
+  background-blend-mode: soft-light;
+}
 
 .section--tight { padding: clamp(60px, 9vw, 116px) 0; }
 
-.section--stone { background: var(--stone); }
+.section--stone {
+  background-color: var(--stone);
+}
 
 /* AA contrast on the darker stone ground */
 .section--stone .eyebrow { color: var(--ink); }
 .section--stone .lede { color: var(--ink); }
 
-.section--wash { background: linear-gradient(180deg, var(--paper) 0%, #E9E9D6 100%); }
+.section--wash {
+  background-color: var(--paper);
+  background-image: url("../img/grain.png"), linear-gradient(180deg, var(--paper) 0%, #E9E9D6 100%);
+  background-size: 256px, auto;
+  background-blend-mode: soft-light, normal;
+}
 
 .section--dark {
-  background: linear-gradient(170deg, #45453B 0%, var(--basalt) 100%);
+  background-color: var(--basalt);
+  background-image: url("../img/grain.png"), linear-gradient(170deg, #45453B 0%, var(--basalt) 100%);
+  background-size: 256px, auto;
+  background-blend-mode: soft-light, normal;
   color: var(--paper);
 }
 .section--dark .eyebrow { color: var(--petal); }
@@ -417,7 +424,10 @@ em { font-style: italic; }
   min-height: 100svh;
   display: flex;
   align-items: flex-end;
-  background: var(--basalt);
+  background-color: var(--basalt);
+  background-image: url("../img/grain.png");
+  background-size: 256px;
+  background-blend-mode: soft-light;
   overflow: hidden;
 }
 
@@ -795,6 +805,10 @@ em { font-style: italic; }
 .site-footer {
   border-top: 1px solid var(--hairline);
   padding: clamp(48px, 7vw, 80px) 0 40px;
+  background-color: var(--paper);
+  background-image: url("../img/grain.png");
+  background-size: 256px;
+  background-blend-mode: soft-light;
 }
 
 /* ghost wordmark — the page ends on the name, the way it began */
